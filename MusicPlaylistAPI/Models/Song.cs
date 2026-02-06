@@ -10,7 +10,7 @@ namespace MusicPlaylistAPI.Models
 
         [Required]
         [StringLength(100)]
-        public string Title { get; set; }
+        public string Title { get; set; } =null!;
 
         [Required]
         [Range(1, 3600)]
@@ -22,12 +22,12 @@ namespace MusicPlaylistAPI.Models
         // 1:N odnos - pjesma pripada jednom izvođaču
         public int ArtistId { get; set; }
         [ForeignKey("ArtistId")]
-        public Artist Artist { get; set; }
+        public Artist Artist { get; set; } = null!;
 
         // N:M odnos - pjesma može pripadati više playlisti
-        public ICollection<PlaylistSong> PlaylistSongs { get; set; }
+        public ICollection<PlaylistSong> PlaylistSongs { get; set; } = new List<PlaylistSong>();
 
         // N:M odnos - pjesma može imati više žanrova
-        public ICollection<SongGenre> SongGenres { get; set; }
+        public ICollection<SongGenre> SongGenres { get; set; } = new List<SongGenre>();
     }
 }

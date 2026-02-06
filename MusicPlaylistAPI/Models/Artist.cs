@@ -9,14 +9,14 @@ namespace MusicPlaylistAPI.Models
 
         [Required]
         [StringLength(100)]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
         [StringLength(500)]
-        public string Biography { get; set; }
+        public string? Biography { get; set; }
 
         public DateTime? DateOfBirth { get; set; }
 
         // 1:N odnos - jedan izvođač može imati više pjesama
-        public ICollection<Song> Songs { get; set; }
+        public ICollection<Song> Songs { get; set; } = new List<Song>();
     }
 }

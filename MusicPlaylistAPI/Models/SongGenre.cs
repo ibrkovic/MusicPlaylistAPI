@@ -6,10 +6,10 @@ namespace MusicPlaylistAPI.Models
     {
         public int SongId { get; set; }
         [ForeignKey("SongId")]
-        public Song Song { get; set; }
+        public Song Song { get; set; } = null!;
 
         public int GenreId { get; set; }
         [ForeignKey("GenreId")]
-        public Genre Genre { get; set; }
+        public Genre Genre { get; set; } = null!;
     }
 }
