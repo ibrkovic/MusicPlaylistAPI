@@ -18,8 +18,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// AutoMapper - obje opcije su dobre
-builder.Services.AddAutoMapper(typeof(Program)); // ili typeof(MappingProfile)
+// AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
 
 // CORS za development
 builder.Services.AddCors(options =>

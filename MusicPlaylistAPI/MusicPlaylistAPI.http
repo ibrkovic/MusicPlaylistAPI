@@ -1,6 +1,40 @@
 @MusicPlaylistAPI_HostAddress = http://localhost:5025
 
-GET {{MusicPlaylistAPI_HostAddress}}/weatherforecast/
+### Artists
+GET {{MusicPlaylistAPI_HostAddress}}/api/artists
 Accept: application/json
 
 ###
+GET {{MusicPlaylistAPI_HostAddress}}/api/artists/1
+Accept: application/json
+
+###
+POST {{MusicPlaylistAPI_HostAddress}}/api/artists
+Content-Type: application/json
+
+{
+  "name": "New Artist",
+  "biography": "Test biography"
+}
+
+### Songs
+GET {{MusicPlaylistAPI_HostAddress}}/api/songs
+Accept: application/json
+
+###
+GET {{MusicPlaylistAPI_HostAddress}}/api/songs/1
+Accept: application/json
+
+### Users
+GET {{MusicPlaylistAPI_HostAddress}}/api/users
+Accept: application/json
+
+###
+POST {{MusicPlaylistAPI_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "password123"
+}
